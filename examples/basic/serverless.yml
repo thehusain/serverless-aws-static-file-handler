@@ -12,7 +12,8 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.x
+  region: ${file(./config.json):deployment.region}
 
 functions:
   html:
@@ -20,6 +21,12 @@ functions:
     events:
       - http:
           path: /
+          method: get
+  client:
+    handler: handler.client
+    events:
+      - http:
+          path: client
           method: get
   png:
     handler: handler.png

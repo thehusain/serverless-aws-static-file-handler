@@ -9,6 +9,11 @@ module.exports.html = async (event, context) => {
   return fileHandler.get(event, context)
 }
 
+module.exports.client = async (event, context) => {
+  event.path = "client.html" // forcing a specific page for this handler; ignore requested path
+  return fileHandler.get(event, context)
+}
+
 module.exports.png = async (event, context) => {
   event.path = "png.png"
   return fileHandler.get(event, context)

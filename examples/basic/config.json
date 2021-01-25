@@ -1,0 +1,6 @@
+{
+	"deployment": {
+		"region": "eu-west-1",
+		"serviceName": "fileupload-client"
+	}
+}
